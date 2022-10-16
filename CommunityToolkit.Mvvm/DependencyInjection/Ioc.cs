@@ -76,7 +76,7 @@ public sealed class Ioc : IServiceProvider
             ThrowInvalidOperationExceptionForMissingInitialization();
         }
 
-        return provider!.GetService(serviceType);
+        return provider.GetService(serviceType);
     }
 
     /// <summary>
@@ -95,7 +95,7 @@ public sealed class Ioc : IServiceProvider
             ThrowInvalidOperationExceptionForMissingInitialization();
         }
 
-        return (T?)provider!.GetService(typeof(T));
+        return (T?)provider.GetService(typeof(T));
     }
 
     /// <summary>
@@ -117,14 +117,14 @@ public sealed class Ioc : IServiceProvider
             ThrowInvalidOperationExceptionForMissingInitialization();
         }
 
-        T? service = (T?)provider!.GetService(typeof(T));
+        T? service = (T?)provider.GetService(typeof(T));
 
         if (service is null)
         {
             ThrowInvalidOperationExceptionForUnregisteredType();
         }
 
-        return service!;
+        return service;
     }
 
     /// <summary>
